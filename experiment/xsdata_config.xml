@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config xmlns="http://pypi.org/project/xsdata" version="24.1">
+  <Output maxLineLength="99" subscriptableTypes="false" unionType="true">
+    <Package>models</Package>
+    <Format repr="true" eq="true" order="false" unsafeHash="false" frozen="false" slots="true" kwOnly="false">pydantic</Format>
+    <Structure>filenames</Structure>
+    <DocstringStyle>Blank</DocstringStyle>
+    <FilterStrategy>allGlobals</FilterStrategy>
+    <RelativeImports>false</RelativeImports>
+    <CompoundFields defaultName="choice" useSubstitutionGroups="false" forceDefaultName="false" maxNameParts="1">true</CompoundFields>
+    <PostponedAnnotations>true</PostponedAnnotations>
+    <UnnestClasses>false</UnnestClasses>
+    <IgnorePatterns>false</IgnorePatterns>
+    <IncludeHeader>false</IncludeHeader>
+  </Output>
+  <Conventions>
+    <ClassName case="pascalCase" safePrefix="type"/>
+    <FieldName case="snakeCase" safePrefix="value"/>
+    <ConstantName case="screamingSnakeCase" safePrefix="value"/>
+    <ModuleName case="snakeCase" safePrefix="mod"/>
+    <PackageName case="snakeCase" safePrefix="pkg"/>
+  </Conventions>
+  <Extensions>
+      <Extension type="class" class="^ExampleFile$" import="experiment.mixins.XMLDummyMixin" applyIfDerived="true"/>
+  </Extensions>
+</Config>

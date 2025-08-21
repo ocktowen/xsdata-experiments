@@ -1,0 +1,40 @@
+<ExampleFile>
+  <Customer>
+    <Name>Maria Garcia</Name>
+    <BillingAddress>
+      <StreetName>Sunset Boulevard</StreetName>
+      <BuildingNumber>1001</BuildingNumber>
+      <City>Los Angeles</City>
+      <Country>USA</Country>
+    </BillingAddress>
+    <BillingAddress>
+      <StreetName>Hollywood Drive</StreetName>
+      <BuildingNumber>2002</BuildingNumber>
+      <City>Beverly Hills</City>
+      <Country>USA</Country>
+    </BillingAddress>
+    <BillingAddress>
+      <StreetName>Rodeo Drive</StreetName>
+      <City>West Hollywood</City>
+      <Country>USA</Country>
+    </BillingAddress>
+  </Customer>
+  <Customer>
+    <Name>David Brown</Name>
+    <HomeAddress>
+      <StreetName>Central Park West</StreetName>
+      <BuildingNumber>111</BuildingNumber>
+      <City>Upper West Side</City>
+      <Country>USA</Country>
+    </HomeAddress>
+  </Customer>
+  <Customer>
+    <Name>Sarah Davis</Name>
+    <WorkAddress>
+      <StreetName>Silicon Valley Blvd</StreetName>
+      <BuildingNumber>3001</BuildingNumber>
+      <City>Palo Alto</City>
+      <Country>USA</Country>
+    </WorkAddress>
+  </Customer>
+</ExampleFile>

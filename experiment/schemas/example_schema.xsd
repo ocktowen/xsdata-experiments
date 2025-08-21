@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    vc:minVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2009/XMLSchema/XMLSchema">
+
+    <xs:element name="ExampleFile">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Customer" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="Payment" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Customer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Name" type="xs:string" />
+                <xs:sequence>
+                    <xs:element ref="WorkAddress" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="HomeAddress" type="AddressType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:choice>
+                    <xs:element name="ShipToAddress" type="AddressType" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="BillingAddress" type="AddressType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Payment">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="Debit" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="PaymentID" type="xs:string" />
+                            <xs:element name="Description" type="xs:decimal" />
+                            <xs:element name="DebitAmount" type="xs:decimal" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Credit" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="PaymentID" type="xs:string" />
+                            <xs:element name="Description" type="xs:decimal" />
+                            <xs:element name="CreditAmount" type="xs:decimal" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="AddressType">
+        <xs:sequence>
+            <xs:element name="StreetName" type="xs:string" />
+            <xs:element name="BuildingNumber" type="xs:string" minOccurs="0" />
+            <xs:element name="City" type="xs:string" />
+            <xs:element name="Country" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="WorkAddress" type="AddressType"/>
+
+</xs:schema>

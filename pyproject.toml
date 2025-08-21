@@ -1,0 +1,28 @@
+[project]
+name = "xsdata-experiments"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "lxml>=6.0.1",
+    "xmlschema>=4.1.0",
+    "xsdata-pydantic>=24.5",
+    "xsdata[cli]>=25.7",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["experiment*"]
+
+[tool.uv.sources]
+xsdata-experiments = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "xsdata-experiments",
+]
